@@ -14,6 +14,13 @@ namespace ConsoleApplicationInheritance
             //let's create a fortune teller
             FortuneTeller fortuneTeller = new FortuneTeller();
             CrystalBall crystalBall = new CrystalBall();
+
+            //Instantiate the new classes to be able to call the below methods.
+
+            NotMagic notMagic = new NotMagic();
+            Customer customer = new Customer();
+            Employee employee = new Employee();
+
             fortuneTeller.Greet(); //say hi
             fortuneTeller.StartService((Service)crystalBall);
 
@@ -21,6 +28,16 @@ namespace ConsoleApplicationInheritance
             string clientCherishedObject = cherishedObject();
             string myPhrase = "you will lose a " + clientCherishedObject + " in a haze of " + clientfavoriteColor + " surrounding you.";
             crystalBall.CreatePhrases(myPhrase);
+
+            //call some simple methods to verify changes to Mel's code.
+
+            Console.WriteLine();
+            notMagic.CutHair();
+            notMagic.PaintNails();
+            customer.PrintCustomerDetails();
+            employee.PrintEmployeeDetails();
+            fortuneTeller.PrintFortuneTellerDetails();
+            Console.WriteLine();
 
             crystalBall.Work();
             crystalBall.Show();
@@ -45,4 +62,6 @@ namespace ConsoleApplicationInheritance
 
         }
     }
+
+
 }
